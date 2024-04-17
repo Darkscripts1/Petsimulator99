@@ -257,4 +257,17 @@ end
   	end    
 })
 
+local AntistaffTab = Window:MakeTab({
+	Name = "Antistaff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+AntistaffTab:AddButton({
+	Name = "Anti Staff",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/anti-staff-ps99/main/anti%20staff"))()
+  	end    
+})
+
 OrionLib:Init()
