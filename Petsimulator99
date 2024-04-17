@@ -1,1 +1,209 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Dark PetSim99", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+MainTab:AddButton({
+	Name = "Auto Collect lootbag",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/IP/main/Dark%20IP"))()
+            
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local function collectLootbag(lootbag)
+    task.wait()
+    ReplicatedStorage.Network.Lootbags_Claim:FireServer({lootbag.Name})
+    lootbag:Destroy()
+end
+
+local function collectOrb(orb)
+    task.wait()
+    ReplicatedStorage.Network["Orbs: Collect"]:FireServer({tonumber(orb.Name)})
+    orb:Destroy()
+end
+
+Workspace.__THINGS.Lootbags.ChildAdded:Connect(function(lootbag)
+    collectLootbag(lootbag)
+end)
+
+Workspace.__THINGS.Orbs.ChildAdded:Connect(function(orb)
+    collectOrb(orb)
+end)
+
+local function collectOrbs()
+    for _, orb in ipairs(Workspace.__THINGS.Orbs:GetChildren()) do
+        collectOrb(orb)
+    end
+end
+
+Workspace.__THINGS.Orbs.ChildAdded:Connect(function(orb)
+    collectOrbs()
+end)
+
+collectOrbs() -- Collect orbs already present in the workspace
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Anti Afk",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/anti-afk-/main/darkscripts"))()
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Fps booster",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/cpu-reducer/main/dark%20cpu%20reducer"))()
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Anti Afk jumps version",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/Anti-afk-1.0/main/Anti%20afk%201.0"))()
+  	end    
+})
+
+local UltimatesTab = Window:MakeTab({
+	Name = "Ultimates",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+UltimatesTab:AddButton({
+	Name = "Auto tornado",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Tornado"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Pet Surge",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Pet Surge"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "TNT Shower",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "TNT Shower"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Ground Pound",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Ground Pound"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Black Hole",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Black Hole"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Hidden Treasure",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Hidden Treasure"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Tsunami",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Tsunami"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Lightning Strom",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Lightning Strom"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+UltimatesTab:AddButton({
+	Name = "Chest spell",
+	Callback = function()
+        while true do
+      		local args = {
+    [1] = "Chest Spell"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Ultimates: Activate"):InvokeServer(unpack(args))
+        end
+  	end    
+})
+
+local AutofruitsTab = Window:MakeTab({
+	Name = "Autofruits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+AutofruitsTab:AddButton({
+	Name = "Auto fruit",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darks-scripts/Dark-auto-fruit/main/AutoFruit"))()
+  	end    
+})
+
+OrionLib:Init()
